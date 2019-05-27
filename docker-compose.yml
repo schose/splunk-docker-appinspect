@@ -1,0 +1,15 @@
+version: '3'
+services:
+# log generator
+  loggen:
+    image: schose/sysgen:latest
+    environment:
+       - SYSGEN_TARGET=splunkforwarder
+       - SYSGEN_PORT=1514
+       - SYSGEN_RATE=100
+       - SYSGEN_TIME=900
+
+networks:
+  default:
+    external:
+      name: sysgen
