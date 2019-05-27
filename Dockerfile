@@ -12,5 +12,6 @@ RUN apt-get clean
 ENV APPINSPECT_ARGS inspect /tmp/iqpress/app_iqpress/iqpress_ml_dgf/ --mode test
 
 ADD entrypoint.sh /sbin/entrypoint.sh
+ADD parse-results.py /usr/local/bin/parse-results.py
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
